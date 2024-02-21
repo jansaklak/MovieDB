@@ -1,0 +1,23 @@
+{
+    "name": "movie-database-app",
+    "version": "1.0.0",
+    "description": "Domowa baza filmów",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+    },
+    "author": "Jan Sakłak",
+    "license": "MIT",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "connect-flash": "^0.1.1",
+        "ejs": "^3.1.9",
+        "express": "^4.17.1",
+        "express-session": "^1.18.0",
+        "express-validator": "^7.0.1",
+        "mongoose": "^6.1.2",
+        "passport": "^0.7.0",
+        "passport-local": "^1.0.0",
+        "sqlite3": "^5.1.7"
+    }
+}
