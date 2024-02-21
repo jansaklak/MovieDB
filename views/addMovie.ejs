@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Movie</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+      .rating > input {
+          display: none; /* Ukryj standardowe pola radio */
+      }
+
+      .rating > label {
+          font-size: 20px; /* Rozmiar gwiazdek */
+          padding: 5px;
+          display:inline-flexbox /* Wyświetlaj gwiazdki w jednej linii */
+      }
+
+      .rating > input:checked ~ label,
+      .rating > input:not(:checked) ~ label:hover,
+      .rating > input:checked ~ label:hover ~ label {
+          color: orange; /* Zmiana koloru gwiazdek na pomarańczowy */
+      }
+      .container {
+        width: 90%; /* lub inna wartość, która zapewni wystarczającą szerokość */
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+  <h1>Add Movie</h1>
+  <form id="add-movie-form" action="/add" method="POST">
+    <label for="title">Tytuł:</label>
+    <input type="text" id="title" name="title" required><br>
+
+    <label for="year">Rok:</label>
+    <input type="range" id="yearRange" name="year" min="1890" max="2024" onchange="updateYearValue(this.value)" required><br>
+    <span id="yearValue"></span>
+
+    <script>
+    function updateYearValue(value) {
+        document.getElementById('yearValue').innerText = value;
+    }
+  </script>
+
+    <label for="genre">Gatunek:</label>
+    <input type="text" id="genre" name="genre" required><br>
+
+    <label for="rating">Ocena:</label><br>
+    <div class="rating">
+        <input type="radio" id="star10" name="rating" value="10">
+        <label for="star10" title="10 stars">&#9734;</label>
+        <input type="radio" id="star9" name="rating" value="9">
+        <label for="star9" title="9 stars">&#9734;</label>
+        <input type="radio" id="star8" name="rating" value="8">
+        <label for="star8" title="8 stars">&#9734;</label>
+        <input type="radio" id="star7" name="rating" value="7">
+        <label for="star7" title="7 stars">&#9734;</label>
+        <input type="radio" id="star6" name="rating" value="6">
+        <label for="star6" title="6 stars">&#9734;</label>
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5" title="5 stars">&#9734;</label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4" title="4 stars">&#9734;</label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3" title="3 stars">&#9734;</label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2" title="2 stars">&#9734;</label>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1" title="1 star">&#9734;</label>
+    </div>
+
+    <label for="country">Kraj:</label>
+    <input type="text" id="country" name="country" required><br>
+
+    <button type="submit">Dodaj film do bazy</button>
+  </form>
+</div>
+</body>
+</html>
