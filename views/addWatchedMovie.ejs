@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj obejrzany film</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Dodaj do obejrzanych</h1>
+
+    <form action="/addWatchedMovie" method="post">
+        <label for="movieId">Wybierz obejrzany film:</label>
+        <select id="movieId" name="movieId">
+            <% movies.forEach(movie => { %>
+                <option value="<%= movie.id %>"><%= movie.title %></option>
+            <% }); %>
+        </select><br><br>
+    
+        <label for="user_rating">Wprowadź ocenę:</label>
+        <select id="user_rating" name="user_rating">
+            <% for (let i = 1; i <= 10; i++) { %>
+                <option value="<%= i %>"><%= i %></option>
+            <% } %>
+        </select><br><br>
+    
+        <button type="submit">Dodaj do obejrzanych</button>
+    </form>
+</div>
+
+
+</body>
+</html>
