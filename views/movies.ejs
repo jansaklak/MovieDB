@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie List</title>
+    <link rel="stylesheet" href="../public/css/style.css">
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table {
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        td {
+            padding: 10px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 15px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <p>Witaj, <%= username %>!</p>
+    <table>
+        <tr>
+            <td><a href="/add" class="btn">Dodaj film</a></td>
+            <td><a href="/addWatchedMovie" class="btn">Zaznacz obejrzany film</a></td>
+            <td><a href="/logout" class="btn">Wyloguj</a></td>
+        </tr>
+    </table>
+    <h1>Movie List</h1>
+    <div class="table-container">
+        <div>
+        <div>
+            <h2>Obejrzane filmy</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Rok</th>
+                        <th>Twoja ocena</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% watchedMovies.forEach(watchedMovie => { %>
+                        <tr>
+                            <td><%= watchedMovie.title %></td>
+                            <td><%= watchedMovie.year %></td>
+                            <td><%= watchedMovie.user_rating %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+        <h2>Baza filmów</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tytuł</th>
+                        <th>Rok</th>
+                        <th>Gatunek</th>
+                        <th>Ocena</th>
+                        <th>Kraj</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% movies.forEach(movie => { %>
+                        <tr>
+                            <td><%= movie.title %></td>
+                            <td><%= movie.year %></td>
+                            <td><%= movie.genre %></td>
+                            <td><%= movie.rating %></td>
+                            <td><%= movie.country %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
