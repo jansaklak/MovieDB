@@ -1,0 +1,158 @@
+/* Resetowanie stylów */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Podstawowe style dla body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #4bcbc1;
+    color: #8c2d2d;
+}
+
+/* Styl dla nagłówka */
+header {
+    background-color: #9c1212;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/* Styl dla nawigacji */
+nav {
+    background-color: #555;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Styl dla sekcji głównej */
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Styl dla formularzy */
+form {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form input[type="text"],
+form input[type="number"] {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+form input[type="submit"] {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+form input[type="submit"]:hover {
+    background-color: #555;
+    text-align: center;
+}
+
+/* Resetowanie domyślnych stylów dla tabeli */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff; /* Dodane tło dla tabeli */
+}
+
+/* Styl nagłówka tabeli */
+th {
+    background-color: #f2f2f2;
+    color: #333;
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Styl komórek tabeli */
+td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Styl wierszy tabeli na zmianę */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Dodatkowy styl dla pierwszego wiersza (ewentualny nagłówek) */
+tr:first-child {
+    background-color: #e0e0e0;
+}
+
+/* Efekt hover nad wierszem */
+tr:hover {
+    background-color: #ddd;
+}
+
+/* Styl dla stopki */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Styl dla formularza */
+form {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Styl dla etykiet */
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Styl dla przycisku */
+button {
+    padding: 8px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
